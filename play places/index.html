@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="bootstrap-4/css/bootstrap.css">
+<link rel="stylesheet" href="CSS/display.css">
+<script type="text/javascript" src="JS/calculate.js"></script>
+<script type="text/javascript" src="JS/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="bootstrap-4/js/bootstrap.js"></script>
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<h1 align="center">Play Place Units</h1>
+	<hr>
+	<p align="center">The cost per square is $5.00.</p>
+	<hr>
+	<br>
+	<div class="row">
+		<div class="col-6 col-md-4" style="padding-right:20px; border-right: 2px solid black;">
+			<h3 align="center">Rectangular</h3>
+			<form id="frm1">
+				<div class="row">
+				<div class="col-2">Length: </div>
+					<div class="col-10"> <input type="number" name="Length" id ="l1" style="width:80%"></div>
+					</div>
+				<div class="row">
+				<div class="col-2">Width: </div>
+				<div class="col-10"><input type="number" name="Width" id="w1" style="width:80%"></div>
+				</div>
+				<br>
+				<button type="button" onclick="myFunction(); getTotal();">Submit</button>
+			</form>
+			
+			<h4>Summary</h4>
+			<p>Length: <span id="Rec1"> </span></p>
+			<p>Width: <span id="Rec2"> </span></p>
+			<p>Area: <span id="Rec3"> </span></p>
+			<p>Total money: $ <span id="Rec4"> </span></p>
+		</div>
+		<div class="col-6 col-md-4" style="padding-right:20px; border-right: 2px solid black;">
+			<h3 align="center">Circular</h3>
+			<form id="frm2">
+				<div class="row">
+					<div class="col-2">Radius: </div>
+					<div class="col-10"><input type="number" name="Radius" id ="r1"  style="width:80%"></div>
+				</div>
+				<br>
+				<button type="button" onclick="myFunction2();getTotal();">Submit</button>
+				</form>
+			<h4>Summary</h4>
+			<p>Radius: <span id="Cir1"> </span></p>
+			<p>Area: <span id="Cir2"> </span></p>
+			<p>Total money: $ <span id="Cir3"> </span></p>
+		</div>
+		<div class="col-6 col-md-4">
+			<h3 align="center">Triangular</h3>
+			<form id="frm3">
+				<div class="row">
+					<div class="col-2">Base: </div>
+					<div class="col-10"> <input type="number" name="Length" id ="b1" style="width:80%"></div>
+				</div>
+				<div class="row">
+					<div class="col-2">Altitude: </div>
+					<div class="col-10"><input type="number" name="Width" id="a1" style="width:80%"></div>
+				</div>
+				<br>
+				<button type="button" onclick="myFunction3();getTotal();">Submit</button>
+			</form>
+			<h4>Summary</h4>
+			<p>Base: <span id="Tri1"> </span></p>
+			<p>Altitude: <span id="Tri2"> </span></p>
+			<p>Area: <span id="Tri3"> </span></p>
+			<p>Total money: $ <span id="Tri4"> </span></p>
+		</div>
+	</div>
+	<hr>
+	<p>Total Area: <span id="totalarea"></span></p>
+	<p>Total Cost: $<span id="totalmoney"></span></p>
+	<span align="center" ><button type="button" onclick="myFunction4();getTotal();">Clear All</button></span>
+
+</body>
+</html>
