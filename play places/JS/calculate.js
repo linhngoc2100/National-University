@@ -2,10 +2,11 @@
 var sum1, sum2, sum3, summoney=0, totalarea=0;
 function myFunction(){
 	    "use strict";
-	var length1, width1;
+	var length1, width1, unit1;
 	
 	length1=document.getElementById("l1").value;
 	width1=document.getElementById("w1").value;
+	unit1 = document.getElementById("u1").value;
 	var area1 = length1* width1;
 	sum1 = area1*5.0;
 	summoney=sum1+summoney;
@@ -13,15 +14,21 @@ function myFunction(){
 	document.getElementById("Rec2").innerHTML=width1;
 	document.getElementById("Rec3").innerHTML=area1;
 	document.getElementById("Rec4").innerHTML=sum1;
-	return area1;
+	document.getElementById("nr1").innerHTML=unit1;
+	document.getElementById("nr2").innerHTML=unit1;
+	document.getElementById("Rec5").innerHTML=unit1*area1;
+	document.getElementById("Rec6").innerHTML=unit1*area1*5.0;
+	return area1*unit1;
 	
 }
 
 function myFunction2(){
 	    "use strict";
-	var radius1;
+	var radius1, unit2;
 	
 	radius1=document.getElementById("r1").value;
+	unit2 = document.getElementById("u2").value;
+
 	var area2 = radius1* Math.PI;
 
 	sum2 = area2*5.0;
@@ -29,14 +36,19 @@ function myFunction2(){
 	document.getElementById("Cir1").innerHTML=radius1;
 	document.getElementById("Cir2").innerHTML=area2;
 	document.getElementById("Cir3").innerHTML=sum2;
-	return area2;
+	document.getElementById("nc1").innerHTML=unit2;
+	document.getElementById("nc2").innerHTML=unit2;
+	document.getElementById("Cir4").innerHTML=unit2*area2;
+	document.getElementById("Cir5").innerHTML=unit2*area2*5.0;
+	return area2*unit2;
 }
 function myFunction3(){
 	    "use strict";
-	var base1, altitude1;
+	var base1, altitude1, unit3;
 	
 	base1=document.getElementById("b1").value;
 	altitude1=document.getElementById("a1").value;
+	unit3 = document.getElementById("u3").value;
 	var area3 = (base1* altitude1)/2;
 
 	sum3 = area3*5.0;
@@ -45,7 +57,11 @@ function myFunction3(){
 	document.getElementById("Tri2").innerHTML=altitude1;
 	document.getElementById("Tri3").innerHTML=area3;
 	document.getElementById("Tri4").innerHTML=sum3;
-	return area3;
+	document.getElementById("nt1").innerHTML=unit3;
+	document.getElementById("nt2").innerHTML=unit3;
+	document.getElementById("Tri5").innerHTML=unit3*area3;
+	document.getElementById("Tri6").innerHTML=unit3*area3*5.0;
+	return area3*unit3;
 }
 
 function getTotal(){
