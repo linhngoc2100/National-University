@@ -7,6 +7,7 @@ function myFunction(){
 	length1=document.getElementById("l1").value;
 	width1=document.getElementById("w1").value;
 	unit1 = document.getElementById("u1").value;
+	if(length1>=0 && width1>=0 && unit1>=0){
 	var area1 = length1* width1;
 	sum1 = area1*5.0;
 	summoney=sum1+summoney;
@@ -18,7 +19,9 @@ function myFunction(){
 	document.getElementById("nr2").innerHTML=unit1;
 	document.getElementById("Rec5").innerHTML=unit1*area1;
 	document.getElementById("Rec6").innerHTML=unit1*area1*5.0;
-	return area1*unit1;
+	return area1*unit1;}
+	else{
+		document.getElementById("Err").innerHTML="Length, Width and Unit cannot be negative.";}
 	
 }
 
@@ -28,7 +31,7 @@ function myFunction2(){
 	
 	radius1=document.getElementById("r1").value;
 	unit2 = document.getElementById("u2").value;
-
+	if(radius1>=0 && unit2>=0){
 	var area2 = radius1* Math.PI;
 
 	sum2 = area2*5.0;
@@ -40,7 +43,11 @@ function myFunction2(){
 	document.getElementById("nc2").innerHTML=unit2;
 	document.getElementById("Cir4").innerHTML=unit2*area2;
 	document.getElementById("Cir5").innerHTML=unit2*area2*5.0;
-	return area2*unit2;
+	return area2*unit2;}
+	else{
+		document.getElementById("Err").innerHTML="Radius and Unit cannot be negative.";
+
+	}
 }
 function myFunction3(){
 	    "use strict";
@@ -49,6 +56,7 @@ function myFunction3(){
 	base1=document.getElementById("b1").value;
 	altitude1=document.getElementById("a1").value;
 	unit3 = document.getElementById("u3").value;
+	if(base1>=0 && altitude1>=0 && unit3>=0){
 	var area3 = (base1* altitude1)/2;
 
 	sum3 = area3*5.0;
@@ -61,7 +69,11 @@ function myFunction3(){
 	document.getElementById("nt2").innerHTML=unit3;
 	document.getElementById("Tri5").innerHTML=unit3*area3;
 	document.getElementById("Tri6").innerHTML=unit3*area3*5.0;
-	return area3*unit3;
+	return area3*unit3;}
+	else{
+		document.getElementById("Err").innerHTML="Base, Altitude and Unit cannot be negative.";
+
+	}
 }
 
 function getTotal(){
@@ -75,6 +87,9 @@ function getTotal(){
 }
 function myFunction4(){
 	"use strict";
+	document.getElementById("unit1").value=0;
+	document.getElementById("unit2").value=0;
+	document.getElementById("unit3").value=0;
 	document.getElementById("l1").value=0;
 	document.getElementById("w1").value=0;
 	document.getElementById("r1").value=0;
