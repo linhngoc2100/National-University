@@ -174,7 +174,7 @@ namespace Projectgui
                         StringBuilder sb = new StringBuilder();
                         sb.Append(s);
                         sb.Append(textBox2.Text);
-                        textBox4.Text = PostalBarCode.convertToBarCode(sb.ToString());
+                        textBox4.Text = convertZiptoBar.convertToBarCode(sb.ToString());
                     }
                 }
                 else if (barbox)
@@ -186,9 +186,7 @@ namespace Projectgui
                     {
                         string s1 = "";
                         s1 = textBox3.Text;
-
-
-                        textBox4.Text = PostalBarCode.convertToZipCode(s1);
+                        textBox4.Text = ConvertBartoZip.convertToZipCode(s1);
                     }
                 }
             

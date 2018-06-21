@@ -45,7 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Convert\PostalBarCode.cs" />
+    <Compile Include="Convert\ConvertBartoZip.cs" />
+    <Compile Include="Convert\convertZiptoBar.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
