@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,7 +57,12 @@ namespace Projectgui.Convert
 
             }
             //calculate checkDigit
-            int checkDigit = 10 - (sum % 10);
+            int checkDigit;
+            if (sum % 10 == 0)
+                checkDigit = 0;
+            else
+                checkDigit = 10 - (sum % 10);
+            Debug.WriteLine("check  "+checkDigit);
             //convert barCode from stringbuilder to string
             string s = barCode.ToString();
             //set the barCode with start and stop bar and check digit
