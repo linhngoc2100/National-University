@@ -8,3 +8,13 @@ C:\Users\tomng\Downloads\Projectgui\Projectgui\obj\Debug\Projectgui.csproj.Gener
 C:\Users\tomng\Downloads\Projectgui\Projectgui\obj\Debug\Projectgui.csproj.CoreCompileInputs.cache
 C:\Users\tomng\Downloads\Projectgui\Projectgui\obj\Debug\Projectgui.exe
 C:\Users\tomng\Downloads\Projectgui\Projectgui\obj\Debug\Projectgui.pdb
+C:\Users\tomng\Documents\GitHub\National-University\Projectgui\Projectgui\bin\Debug\Projectgui.exe.config
+C:\Users\tomng\Documents\GitHub\National-University\Projectgui\Projectgui\bin\Debug\Projectgui.exe
+C:\Users\tomng\Documents\GitHub\National-University\Projectgui\Projectgui\bin\Debug\Projectgui.pdb
+C:\Users\tomng\Documents\GitHub\National-University\Projectgui\Projectgui\obj\Debug\Projectgui.csprojAssemblyReference.cache
+C:\Users\tomng\Documents\GitHub\National-University\Projectgui\Projectgui\obj\Debug\Projectgui.Form1.resources
+C:\Users\tomng\Documents\GitHub\National-University\Projectgui\Projectgui\obj\Debug\Projectgui.Properties.Resources.resources
+C:\Users\tomng\Documents\GitHub\National-University\Projectgui\Projectgui\obj\Debug\Projectgui.csproj.GenerateResource.cache
+C:\Users\tomng\Documents\GitHub\National-University\Projectgui\Projectgui\obj\Debug\Projectgui.csproj.CoreCompileInputs.cache
+C:\Users\tomng\Documents\GitHub\National-University\Projectgui\Projectgui\obj\Debug\Projectgui.exe
+C:\Users\tomng\Documents\GitHub\National-University\Projectgui\Projectgui\obj\Debug\Projectgui.pdb
