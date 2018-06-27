@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projectgui.Convert
+namespace Projectgui.Convert2
 {
     class convertZiptoBar
     {
@@ -62,7 +61,6 @@ namespace Projectgui.Convert
                 checkDigit = 0;
             else
                 checkDigit = 10 - (sum % 10);
-            Debug.WriteLine("check  "+checkDigit);
             //convert barCode from stringbuilder to string
             string s = barCode.ToString();
             //set the barCode with start and stop bar and check digit
