@@ -45,6 +45,9 @@ namespace Projectgui.Convert2
             {
                 //pop the top first
                 zipDigit = myStack.Pop();
+                //get barcode
+                barCode.Append(getBar(zipDigit));
+                /*
                 for (int j = 0; j < 5; j++)
                 {
                     //condition check to see if the number is 1 or 0 for setting | or :
@@ -52,7 +55,7 @@ namespace Projectgui.Convert2
                         barCode.Append("|");
                     else
                         barCode.Append(":");
-                }
+                }*/
 
             }
             //calculate checkDigit
@@ -67,7 +70,7 @@ namespace Projectgui.Convert2
             s = startstopbar + s + getBar(checkDigit) + startstopbar;
             return s;
         }
-        //get the bar for check digit
+        //get the barcode method
         public static string getBar(int x)
         {
             StringBuilder sb = new StringBuilder();

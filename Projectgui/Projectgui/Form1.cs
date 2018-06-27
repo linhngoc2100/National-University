@@ -30,6 +30,7 @@ namespace Projectgui
             comboBox1.SelectedIndex = 0;
             textBox1.MaxLength = 5;
             textBox2.MaxLength = 4;
+            textBox3.MaxLength = 52;
             numericUpDown1.Value = size;
           
 
