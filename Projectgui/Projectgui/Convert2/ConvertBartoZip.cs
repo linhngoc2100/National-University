@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projectgui.Convert2
 {
-    class ConvertBartoZip
+    public class ConvertBartoZip
     {
         public static string convertToZipCode(string barCode)
         {

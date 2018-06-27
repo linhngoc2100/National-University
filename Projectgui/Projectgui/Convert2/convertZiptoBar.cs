@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projectgui.Convert2
 {
-    class convertZiptoBar
+    public class convertZiptoBar
     {
         //set start and stop bar
         static string startstopbar = "|";
