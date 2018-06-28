@@ -96,7 +96,7 @@ namespace Projectgui
             }
         }
         /// <summary>
-        /// Select size of input text
+        /// Select size of input text for textbox1 to 4
         /// </summary>
        
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -125,10 +125,11 @@ namespace Projectgui
                 textBox4.Font = new Font("Arial", size, FontStyle.Italic);
             }
         }
-
+        //get which dropdown box is selected
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string current = (string)comboBox1.SelectedItem;
+            //if it zip+4, it will show the input of zip+4
             if (current.Equals("Zip+4"))
             {
                 groupBox1.Text = "Enter Zip+4";
@@ -141,6 +142,7 @@ namespace Projectgui
                 zipbox = true;
                 barbox = false;
             }
+            // it wil show the inputt of barcode
             else {
                 groupBox1.Text = "Enter Barcode";
 
@@ -200,9 +202,10 @@ namespace Projectgui
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-                
-                if (zipbox)
+            //check if the chosen one is zipcode or not. If yes, it will process the zipcode
+            if (zipbox)
                 {
+                //test to see if the input1 and input2 is empty or not. And test to see if they are in the length of 5 and 4 or not. if Not, it wil show error message
                     if (textBox1.Text == "" || textBox2.Text == ""|| textBox1.TextLength != 5||textBox2.TextLength
                     !=4)
                         MessageBox.Show("Zipcode not in correct format", "Zipcode input error",
@@ -216,8 +219,10 @@ namespace Projectgui
                         textBox4.Text = convertZiptoBar.convertToBarCode(sb.ToString());
                     }
                 }
+                //check if the chosen one is barcode or not. If yes, it will process
                 else if (barbox)
                 {
+                    //test the format to see if it is in the length of 52 or not. If not, it will show error message
                     if (textBox3.Text == ""||textBox3.TextLength !=52)
                         MessageBox.Show("Barcode not in correct format", "Barcode input error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
