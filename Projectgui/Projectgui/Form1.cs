@@ -1,5 +1,5 @@
 ﻿using System;
-using Projectgui.Convert;
+using Projectgui.Convert2;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,12 +10,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
+
 namespace Projectgui
 {
     public partial class Form1 : Form
     {
         Boolean zipbox=false;
         Boolean barbox=false;
+        int size = 8;
+        String fontstyle = "R";
+        String font = "Arial";
+        
         public Form1()
         {
             InitializeComponent();
@@ -24,37 +29,77 @@ namespace Projectgui
             comboBox1.Items.Add("Zip+4");
             comboBox1.Items.Add("Barcode");
             comboBox1.SelectedIndex = 0;
+            
             textBox1.MaxLength = 5;
             textBox2.MaxLength = 4;
-           
+            textBox3.MaxLength = 52;
+            numericUpDown1.Value = size;
+            List<string> fonts = new List<string>();
+
+            foreach (FontFamily font in System.Drawing.FontFamily.Families)
+            {
+                comboBox2.Items.Add(font.Name);
+            }
+
+            comboBox2.SelectedIndex = 14;
         }
 
         /// <summary>
         /// to set up input text in bold style and selected or unselected
         /// </summary>
-       
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            font = (string)comboBox2.SelectedItem;
+
+            if (fontstyle.Equals("R"))
+            {
+
+                textBox1.Font = new Font(font, size, FontStyle.Regular);
+                textBox2.Font = new Font(font, size, FontStyle.Regular);
+                textBox3.Font = new Font(font, size, FontStyle.Regular);
+                textBox4.Font = new Font(font, size, FontStyle.Regular);
+            }
+            else if (fontstyle.Equals("B"))
+            {
+                textBox1.Font = new Font(font, size, FontStyle.Bold);
+                textBox2.Font = new Font(font, size, FontStyle.Bold);
+                textBox3.Font = new Font(font, size, FontStyle.Bold);
+                textBox4.Font = new Font(font, size, FontStyle.Bold);
+            }
+            else if (fontstyle.Equals("I"))
+            {
+                textBox1.Font = new Font(font, size, FontStyle.Italic);
+                textBox2.Font = new Font(font, size, FontStyle.Italic);
+                textBox3.Font = new Font(font, size, FontStyle.Italic);
+                textBox4.Font = new Font(font, size, FontStyle.Italic);
+            }
+        }
         public void button1_Click(object sender, EventArgs e)
         {
 
-            if (button1.BackColor == Color.LightGray) {
+            if (button1.BackColor == Color.LightGray)
+            {
                 button1.BackColor = Color.LightBlue;
                 button2.BackColor = Color.LightGray;
-                textBox1.Font = new Font("Arial", 8, FontStyle.Bold);
-                textBox2.Font = new Font("Arial", 8, FontStyle.Bold);
-                textBox3.Font = new Font("Arial", 8, FontStyle.Bold);
-                textBox4.Font = new Font("Arial", 8, FontStyle.Bold);
+
+                textBox1.Font = new Font(font, size, FontStyle.Bold);
+                textBox2.Font = new Font(font, size, FontStyle.Bold);
+                textBox3.Font = new Font(font, size, FontStyle.Bold);
+                textBox4.Font = new Font(font, size, FontStyle.Bold);
+
+                fontstyle = "B";
 
             }
-            else if(button1.BackColor == Color.LightBlue)
+            else if (button1.BackColor == Color.LightBlue)
             {
                 button1.BackColor = Color.LightGray;
-                textBox1.Font = new Font("Arial", 8, FontStyle.Regular);
-                textBox2.Font = new Font("Arial", 8, FontStyle.Regular);
-                textBox3.Font = new Font("Arial", 8, FontStyle.Regular);
-                textBox4.Font = new Font("Arial", 8, FontStyle.Regular);
+                textBox1.Font = new Font(font, size, FontStyle.Regular);
+                textBox2.Font = new Font(font, size, FontStyle.Regular);
+                textBox3.Font = new Font(font, size, FontStyle.Regular);
+                textBox4.Font = new Font(font, size, FontStyle.Regular);
+                fontstyle = "R";
             }
-            
-            
+
         }
        /// <summary>
        /// to set up input text in italic style and selected or unselected
@@ -67,19 +112,20 @@ namespace Projectgui
             {
                 button2.BackColor = Color.LightBlue;
                 button1.BackColor = Color.LightGray;
-                textBox1.Font = new Font("Arial", 8, FontStyle.Italic);
-                textBox2.Font = new Font("Arial", 8, FontStyle.Italic);
-                textBox3.Font = new Font("Arial", 8, FontStyle.Italic);
-                textBox4.Font = new Font("Arial", 8, FontStyle.Italic);
-
+                textBox1.Font = new Font(font, size, FontStyle.Italic);
+                textBox2.Font = new Font(font, size, FontStyle.Italic);
+                textBox3.Font = new Font(font, size, FontStyle.Italic);
+                textBox4.Font = new Font(font, size, FontStyle.Italic);
+                fontstyle = "I";
             }
             else if (button2.BackColor == Color.LightBlue)
             {
                 button2.BackColor = Color.LightGray;
-                textBox1.Font = new Font("Arial", 8, FontStyle.Regular);
-                textBox2.Font = new Font("Arial", 8, FontStyle.Regular);
-                textBox3.Font = new Font("Arial", 8, FontStyle.Regular);
-                textBox4.Font = new Font("Arial", 8, FontStyle.Regular);
+                textBox1.Font = new Font(font, size, FontStyle.Regular);
+                textBox2.Font = new Font(font, size, FontStyle.Regular);
+                textBox3.Font = new Font(font, size, FontStyle.Regular);
+                textBox4.Font = new Font(font, size, FontStyle.Regular);
+                fontstyle = "R";
             }
         }
         /// <summary>
@@ -88,13 +134,36 @@ namespace Projectgui
        
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            int i = (int)numericUpDown1.Value;
-            textBox4.Font = new Font(textBox4.Font.FontFamily, i);
+            size = Convert.ToInt32(numericUpDown1.Value);
+            if (fontstyle.Equals("R"))
+            {
+
+                textBox1.Font = new Font(textBox1.Font.FontFamily, size);
+                textBox2.Font = new Font(textBox2.Font.FontFamily, size);
+                textBox3.Font = new Font(textBox3.Font.FontFamily, size);
+                textBox4.Font = new Font(textBox4.Font.FontFamily, size);
+            }
+            else if (fontstyle.Equals("B"))
+            {
+                textBox1.Font = new Font(font, size, FontStyle.Bold);
+                textBox2.Font = new Font(font, size, FontStyle.Bold);
+                textBox3.Font = new Font(font, size, FontStyle.Bold);
+                textBox4.Font = new Font(font, size, FontStyle.Bold);
+            }
+            else if (fontstyle.Equals("I"))
+            {
+                textBox1.Font = new Font(font, size, FontStyle.Italic);
+                textBox2.Font = new Font(font, size, FontStyle.Italic);
+                textBox3.Font = new Font(font, size, FontStyle.Italic);
+                textBox4.Font = new Font(font, size, FontStyle.Italic);
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //get selecting which combobox is
             string current = (string)comboBox1.SelectedItem;
+            //check to see if it is zip+4 or barcode and then process according to which one is choosen.
             if (current.Equals("Zip+4"))
             {
                 groupBox1.Text = "Enter Zip+4";
@@ -102,9 +171,11 @@ namespace Projectgui
                 textBox2.Visible = true;
                 textBox3.Visible = false;
                 textBox4.Enabled = false;
-                button3.Text = "Generate Zip+4";
+                textBox4.Text = "";
+                button3.Text = "Generate Barcode";
                 zipbox = true;
                 barbox = false;
+               
             }
             else {
                 groupBox1.Text = "Enter Barcode";
@@ -113,9 +184,11 @@ namespace Projectgui
                 textBox2.Visible = false;
                 textBox3.Visible = true;
                 textBox4.Enabled = false;
-                button3.Text = "Generate Barcode";
+                textBox4.Text = "";
+                button3.Text = "Generate Zip+4";
                 barbox = true;
                 zipbox = false;
+              
             }
         }
 
@@ -139,7 +212,8 @@ namespace Projectgui
             if (System.Text.RegularExpressions.Regex.IsMatch(textBox1.Text, "[^0-9]"))
             {
                 MessageBox.Show("Please enter only numbers.");
-                textBox1.Text = "";
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+                
             }
         }
         /// <summary>
@@ -152,7 +226,8 @@ namespace Projectgui
             if (System.Text.RegularExpressions.Regex.IsMatch(textBox2.Text, "[^0-9]"))
             {
                 MessageBox.Show("Please enter only numbers.");
-                textBox2.Text = "";
+                textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
+                
             }
         }
         /// <summary>
@@ -162,11 +237,14 @@ namespace Projectgui
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-                
+                //check to see if it is zipbox input or not. If it is, it will do the action
                 if (zipbox)
                 {
-                    if (textBox1.Text == "" || textBox2.Text == "")
-                        MessageBox.Show("Zipcode cannot empty", "Zipcode input error",
+                    //Check to see if textbox1 and textbox2 is empty or not, and the length of textbox1 and textbox2 is 5 and 4 or not. If not, it will display error message.
+                    //if yes, it will process and display the barcode
+                    if (textBox1.Text == "" || textBox2.Text == ""|| textBox1.TextLength != 5||textBox2.TextLength
+                    !=4)
+                        MessageBox.Show("Zipcode not in correct format", "Zipcode input error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
@@ -179,17 +257,28 @@ namespace Projectgui
                 }
                 else if (barbox)
                 {
-                    if (textBox3.Text == "")
-                        MessageBox.Show("barcode cannot empty", "Barcode input error",
+                //check to see if the textbox3 is empty or not, and if the length is 52 or not. 
+                //if not, it will display error message
+                //if yes, it will process and display zipcode
+                    if (textBox3.Text == ""||textBox3.TextLength !=52)
+                        MessageBox.Show("Barcode not in correct format", "Barcode input error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
                         string s1 = "";
                         s1 = textBox3.Text;
-                        textBox4.Text = ConvertBartoZip.convertToZipCode(s1);
-                    }
+                    //check the barcode is right or wrong. If right, it will process and display zipcoe, otehrwise will display error message
+                        if(CheckDigitValidation.CheckandValidation(s1))
+                            textBox4.Text = ConvertBartoZip.convertToZipCode(s1);
+                        else
+                            MessageBox.Show("Barcode is wrong", "Barcode input error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            
+                }
+                textBox2.Text = "";
+                textBox1.Text = "";
+                textBox3.Text = "";
+
         }
         /// <summary>
         /// textbox3 input barcode check statement if input in format of |:
@@ -201,7 +290,8 @@ namespace Projectgui
             if (System.Text.RegularExpressions.Regex.IsMatch(textBox3.Text, "[^|,:]"))
             {
                 MessageBox.Show("Please enter only Barcode.");
-                textBox3.Text = "";
+                textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
+                
             }
         }
 
@@ -209,5 +299,17 @@ namespace Projectgui
         {
 
         }
+        //Exit button
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void textBox3_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
