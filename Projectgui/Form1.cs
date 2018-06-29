@@ -261,7 +261,7 @@ namespace Projectgui
                 //if not, it will display error message
                 //if yes, it will process and display zipcode
                     if (textBox3.Text == ""||textBox3.TextLength !=52)
-                        MessageBox.Show("Barcode not in correct format", "Barcode input error",
+                        MessageBox.Show("Barcode is not in correct format", "Barcode input error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
@@ -271,7 +271,7 @@ namespace Projectgui
                         if(CheckDigitValidation.CheckandValidation(s1))
                             textBox4.Text = ConvertBartoZip.convertToZipCode(s1);
                         else
-                            MessageBox.Show("Barcode is wrong", "Barcode input error",
+                            MessageBox.Show("Barcode is not in correct format", "Barcode input error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 }
@@ -287,7 +287,7 @@ namespace Projectgui
         /// <param name="e"></param>
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(textBox3.Text, "[^|,:]"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox3.Text, "[^|:]"))
             {
                 MessageBox.Show("Please enter only Barcode.");
                 textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);

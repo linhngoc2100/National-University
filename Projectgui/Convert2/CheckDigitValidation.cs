@@ -19,7 +19,7 @@ namespace Projectgui.Convert2
             String[,] barArray = new String[10, 5];
 
             //validation of first and last bar as |
-            if (((barCode.StartsWith("|"))) || ((barCode.EndsWith("|"))))
+            if (((barCode.StartsWith("|"))) && ((barCode.EndsWith("|"))))
             {
                 barCode = barCode.Substring(1);     //Remove start bar
                 barCode = barCode.Remove(barCode.Length - 1);//Remove Stop bar           
@@ -44,7 +44,7 @@ namespace Projectgui.Convert2
                     for (int l = 0; l < 5; l++)
                     {
 
-                        if (binaryCodeN[k, 0] == 1 && binaryCodeN[k, 1] == 1)
+                        if (binaryCodeN[k, 0] == 1 && binaryCodeN[k, 1] == 1 && binaryCodeN[k, 2]==0 && binaryCodeN[k, 3]==0 && binaryCodeN[k, 4]==0)
                         {
                             sum = 0;
                             break;
@@ -65,7 +65,15 @@ namespace Projectgui.Convert2
                                 sum = sum + binaryCodeN[k, l] * 0;
                         }
                     }
-                    sum1 = sum1 + sum;
+                    //if the digit is greater than 9, it will show error message
+                    if(sum>9)
+                    {
+                        /*MessageBox.Show("Barcode not in correct format", "Barcode input error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);*/
+                        return false;
+                    }
+                    else
+                        sum1 = sum1 + sum;
 
                 }
                 //debug the sum in console output
@@ -78,8 +86,8 @@ namespace Projectgui.Convert2
             }
             else
             {
-                MessageBox.Show("Barcode not in correct format", "Barcode input error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                /*MessageBox.Show("Barcode not in correct format", "Barcode input error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);*/
                 return false;
             }
             
