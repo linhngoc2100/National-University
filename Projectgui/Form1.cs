@@ -19,7 +19,10 @@ namespace Projectgui
         Boolean barbox=false;
         int size = 8;
         String fontstyle = "R";
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.cs
         String font = "Arial";
+=======
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.cs
         
         public Form1()
         {
@@ -32,6 +35,7 @@ namespace Projectgui
             
             textBox1.MaxLength = 5;
             textBox2.MaxLength = 4;
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.cs
             textBox3.MaxLength = 52;
             numericUpDown1.Value = size;
             List<string> fonts = new List<string>();
@@ -42,6 +46,12 @@ namespace Projectgui
             }
 
             comboBox2.SelectedIndex = 14;
+=======
+            numericUpDown1.Value = size;
+          
+
+
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.cs
         }
 
         /// <summary>
@@ -82,10 +92,17 @@ namespace Projectgui
                 button1.BackColor = Color.LightBlue;
                 button2.BackColor = Color.LightGray;
 
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.cs
                 textBox1.Font = new Font(font, size, FontStyle.Bold);
                 textBox2.Font = new Font(font, size, FontStyle.Bold);
                 textBox3.Font = new Font(font, size, FontStyle.Bold);
                 textBox4.Font = new Font(font, size, FontStyle.Bold);
+=======
+                textBox1.Font = new Font("Arial", size, FontStyle.Bold);
+                textBox2.Font = new Font("Arial", size, FontStyle.Bold);
+                textBox3.Font = new Font("Arial", size, FontStyle.Bold);
+                textBox4.Font = new Font("Arial", size, FontStyle.Bold);
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.cs
 
                 fontstyle = "B";
 
@@ -93,10 +110,17 @@ namespace Projectgui
             else if (button1.BackColor == Color.LightBlue)
             {
                 button1.BackColor = Color.LightGray;
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.cs
                 textBox1.Font = new Font(font, size, FontStyle.Regular);
                 textBox2.Font = new Font(font, size, FontStyle.Regular);
                 textBox3.Font = new Font(font, size, FontStyle.Regular);
                 textBox4.Font = new Font(font, size, FontStyle.Regular);
+=======
+                textBox1.Font = new Font("Arial", size, FontStyle.Regular);
+                textBox2.Font = new Font("Arial", size, FontStyle.Regular);
+                textBox3.Font = new Font("Arial", size, FontStyle.Regular);
+                textBox4.Font = new Font("Arial", size, FontStyle.Regular);
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.cs
                 fontstyle = "R";
             }
 
@@ -112,19 +136,33 @@ namespace Projectgui
             {
                 button2.BackColor = Color.LightBlue;
                 button1.BackColor = Color.LightGray;
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.cs
                 textBox1.Font = new Font(font, size, FontStyle.Italic);
                 textBox2.Font = new Font(font, size, FontStyle.Italic);
                 textBox3.Font = new Font(font, size, FontStyle.Italic);
                 textBox4.Font = new Font(font, size, FontStyle.Italic);
+=======
+                textBox1.Font = new Font("Arial", size, FontStyle.Italic);
+                textBox2.Font = new Font("Arial", size, FontStyle.Italic);
+                textBox3.Font = new Font("Arial", size, FontStyle.Italic);
+                textBox4.Font = new Font("Arial", size, FontStyle.Italic);
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.cs
                 fontstyle = "I";
             }
             else if (button2.BackColor == Color.LightBlue)
             {
                 button2.BackColor = Color.LightGray;
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.cs
                 textBox1.Font = new Font(font, size, FontStyle.Regular);
                 textBox2.Font = new Font(font, size, FontStyle.Regular);
                 textBox3.Font = new Font(font, size, FontStyle.Regular);
                 textBox4.Font = new Font(font, size, FontStyle.Regular);
+=======
+                textBox1.Font = new Font("Arial", size, FontStyle.Regular);
+                textBox2.Font = new Font("Arial", size, FontStyle.Regular);
+                textBox3.Font = new Font("Arial", size, FontStyle.Regular);
+                textBox4.Font = new Font("Arial", size, FontStyle.Regular);
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.cs
                 fontstyle = "R";
             }
         }
@@ -141,6 +179,7 @@ namespace Projectgui
                 textBox1.Font = new Font(textBox1.Font.FontFamily, size);
                 textBox2.Font = new Font(textBox2.Font.FontFamily, size);
                 textBox3.Font = new Font(textBox3.Font.FontFamily, size);
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.cs
                 textBox4.Font = new Font(textBox4.Font.FontFamily, size);
             }
             else if (fontstyle.Equals("B"))
@@ -156,6 +195,23 @@ namespace Projectgui
                 textBox2.Font = new Font(font, size, FontStyle.Italic);
                 textBox3.Font = new Font(font, size, FontStyle.Italic);
                 textBox4.Font = new Font(font, size, FontStyle.Italic);
+=======
+                textBox4.Font = new Font(textBox3.Font.FontFamily, size);
+            }
+            else if (fontstyle.Equals("B"))
+            {
+                textBox1.Font = new Font("Arial", size, FontStyle.Bold);
+                textBox2.Font = new Font("Arial", size, FontStyle.Bold);
+                textBox3.Font = new Font("Arial", size, FontStyle.Bold);
+                textBox4.Font = new Font("Arial", size, FontStyle.Bold);
+            }
+            else if (fontstyle.Equals("I"))
+            {
+                textBox1.Font = new Font("Arial", size, FontStyle.Italic);
+                textBox2.Font = new Font("Arial", size, FontStyle.Italic);
+                textBox3.Font = new Font("Arial", size, FontStyle.Italic);
+                textBox4.Font = new Font("Arial", size, FontStyle.Italic);
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.cs
             }
         }
 
@@ -304,6 +360,7 @@ namespace Projectgui
         {
             this.Close();
         }
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.cs
 
         private void textBox3_TextChanged_1(object sender, EventArgs e)
         {
@@ -311,5 +368,7 @@ namespace Projectgui
         }
 
        
+=======
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.cs
     }
 }

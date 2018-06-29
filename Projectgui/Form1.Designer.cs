@@ -41,8 +41,12 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.Designer.cs
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+=======
+            this.btnExit = new System.Windows.Forms.Button();
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.Designer.cs
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,7 +74,11 @@
             // 
             // numericUpDown1
             // 
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.Designer.cs
             this.numericUpDown1.Location = new System.Drawing.Point(542, 80);
+=======
+            this.numericUpDown1.Location = new System.Drawing.Point(451, 80);
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.Designer.cs
             this.numericUpDown1.Maximum = new decimal(new int[] {
             20,
             0,
@@ -103,6 +111,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label1);
@@ -183,6 +192,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Output";
             // 
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.Designer.cs
+=======
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(330, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Style and Font Size";
+            // 
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.Designer.cs
             // label3
             // 
             this.label3.AutoSize = true;
@@ -193,6 +214,7 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "U.S. Postal Bar Codes Reader and Writer";
             // 
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.Designer.cs
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(6, 30);
@@ -210,13 +232,27 @@
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 16;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+=======
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(386, 28);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 12;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.Designer.cs
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 435);
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.Designer.cs
             this.Controls.Add(this.comboBox2);
+=======
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.Designer.cs
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox2);
@@ -257,8 +293,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnExit;
+<<<<<<< HEAD:Projectgui/Projectgui/Form1.Designer.cs
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox comboBox2;
+=======
+>>>>>>> 841cf5234139a30f5ca956de46af59d6f412f68d:Projectgui/Form1.Designer.cs
     }
 }
 
