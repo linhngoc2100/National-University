@@ -44,11 +44,14 @@ namespace Projectgui.Convert2
                     for (int l = 0; l < 5; l++)
                     {
 
-                        if (binaryCodeN[k, 0] == 1 && binaryCodeN[k, 1] == 1 && binaryCodeN[k, 2]==0 && binaryCodeN[k, 3]==0 && binaryCodeN[k, 4]==0)
+                        if (binaryCodeN[k, 0] == 1 && binaryCodeN[k, 1] == 1 && binaryCodeN[k, 2] == 0 && binaryCodeN[k, 3] == 0 && binaryCodeN[k, 4] == 0)
                         {
                             sum = 0;
                             break;
                         }
+                        //if the 5 binary number is 00000, it will return error message
+                        else if (binaryCodeN[k, 0] == 0 && binaryCodeN[k, 1] == 0 && binaryCodeN[k, 2] == 0 && binaryCodeN[k, 3] == 0 && binaryCodeN[k, 4] == 0)
+                            return false;
                         else
                         {
                             if (l == 0)

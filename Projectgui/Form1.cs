@@ -285,15 +285,7 @@ namespace Projectgui
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(textBox3.Text, "[^|:]"))
-            {
-                MessageBox.Show("Please enter only Barcode.");
-                textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
-                
-            }
-        }
+       
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
@@ -307,7 +299,12 @@ namespace Projectgui
 
         private void textBox3_TextChanged_1(object sender, EventArgs e)
         {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox3.Text, "[^|:]"))
+            {
+                MessageBox.Show("Please enter only Barcode.");
+                textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
 
+            }
         }
 
        
