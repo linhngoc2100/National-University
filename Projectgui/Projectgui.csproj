@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Convert2\CheckDigitValidation.cs" />
     <Compile Include="Convert2\ConvertBartoZip.cs" />
     <Compile Include="Convert2\convertZiptoBar.cs" />
     <Compile Include="Form1.cs">

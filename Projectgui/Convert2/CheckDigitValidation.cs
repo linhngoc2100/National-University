@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,21 +8,23 @@ using System.Windows.Forms;
 
 namespace Projectgui.Convert2
 {
-    class ConvertBartoZip
+    class CheckDigitValidation
     {
-        public static string convertToZipCode(string barCode)
+        public static Boolean CheckandValidation(string barCode)
         {
             int count = 0;
             StringBuilder sb = new StringBuilder();
+            int sum1 = 0;
             int[,] binaryCodeN = new int[10, 5];
             String[,] barArray = new String[10, 5];
 
-           
-            
+            //validation of first and last bar as |
+            if (((barCode.StartsWith("|"))) || ((barCode.EndsWith("|"))))
+            {
                 barCode = barCode.Substring(1);     //Remove start bar
                 barCode = barCode.Remove(barCode.Length - 1);//Remove Stop bar           
-            //convert barcode to binary number 0 and 1
-            for (int i = 0; i < 10; i++)
+                //convert barcode to binary number 0 and 1
+                for (int i = 0; i < 10; i++)
                 {
                     for (int j = 0; j < 5; j++)
                     {
@@ -34,8 +37,8 @@ namespace Projectgui.Convert2
                         count++;
                     }
                 }
-            //get the digit for every 5 binary number with the rule 74210
-            for (int k = 0; k < 10; k++)
+                //get the digit for every 5 binary number
+                for (int k = 0; k < 10; k++)
                 {
                     int sum = 0;
                     for (int l = 0; l < 5; l++)
@@ -62,15 +65,25 @@ namespace Projectgui.Convert2
                                 sum = sum + binaryCodeN[k, l] * 0;
                         }
                     }
-                    sb.Append(sum);
+                    sum1 = sum1 + sum;
 
                 }
-            //remove the last character
-                sb.Length--;
-                sb.Insert(5, " - ");                
-                return sb.ToString();
-           
+                //debug the sum in console output
+                Debug.WriteLine(sum1);
+                if (sum1 % 10 == 0)
+                    return true;
+                else
+                    return false;
+                
+            }
+            else
+            {
+                MessageBox.Show("Barcode not in correct format", "Barcode input error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            
         }
-
+    
     }
 }

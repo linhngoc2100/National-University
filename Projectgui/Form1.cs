@@ -127,7 +127,9 @@ namespace Projectgui
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //get selecting which combobox is
             string current = (string)comboBox1.SelectedItem;
+            //check to see if it is zip+4 or barcode and then process according to which one is choosen.
             if (current.Equals("Zip+4"))
             {
                 groupBox1.Text = "Enter Zip+4";
@@ -199,9 +201,11 @@ namespace Projectgui
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-                
+                //check to see if it is zipbox input or not. If it is, it will do the action
                 if (zipbox)
                 {
+                    //Check to see if textbox1 and textbox2 is empty or not, and the length of textbox1 and textbox2 is 5 and 4 or not. If not, it will display error message.
+                    //if yes, it will process and display the barcode
                     if (textBox1.Text == "" || textBox2.Text == ""|| textBox1.TextLength != 5||textBox2.TextLength
                     !=4)
                         MessageBox.Show("Zipcode not in correct format", "Zipcode input error",
@@ -217,6 +221,9 @@ namespace Projectgui
                 }
                 else if (barbox)
                 {
+                //check to see if the textbox3 is empty or not, and if the length is 52 or not. 
+                //if not, it will display error message
+                //if yes, it will process and display zipcode
                     if (textBox3.Text == ""||textBox3.TextLength !=52)
                         MessageBox.Show("Barcode not in correct format", "Barcode input error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -224,8 +231,13 @@ namespace Projectgui
                     {
                         string s1 = "";
                         s1 = textBox3.Text;
-                        textBox4.Text = ConvertBartoZip.convertToZipCode(s1);
-                    }
+                    //check the barcode is right or wrong. If right, it will process and display zipcoe, otehrwise will display error message
+                        if(CheckDigitValidation.CheckandValidation(s1))
+                            textBox4.Text = ConvertBartoZip.convertToZipCode(s1);
+                        else
+                            MessageBox.Show("Barcode is wrong", "Barcode input error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 }
                 textBox2.Text = "";
                 textBox1.Text = "";
@@ -250,6 +262,11 @@ namespace Projectgui
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        //Exit button
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
